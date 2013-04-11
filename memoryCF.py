@@ -42,10 +42,9 @@ def trainMCF(ratings,SIM):
 def testMFC(testSet,ratings,userrankedmean,normalizedRankings,SIM):
 	numUsers,numMovies=shape(ratings)
 	numTestUsers=max(testSet[:][:,0])-min(testSet[:][:,0])+1
-	numMovies=1000
+
 	#Create the user Testing matrix
 	ratingsTest=zeros((numTestUsers,numMovies))
-
 	for row in testSet:
 		ratingsTest[row[0]-testSet[0][0]][row[1]-1]=row[2]
 
